@@ -17,7 +17,7 @@ def fizzbuzz(number):
      else:
         answer = number
      return {'answer': answer}    
-@app.route('/apiconverter/<text>')
+@app.route('/apiconverter')
 def process_string(text):
     ''' The  function takes as input a string and adds a copy right symbol
     after the names of the companies as specified in keywords '''
