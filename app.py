@@ -4,7 +4,8 @@ app = Chalice(app_name='stringconverterapi')
 @app.route('/') 
 def index(): 
     return {'hello': 'world'}
-    
+
+
 @app.route('/fizzbuzz/{number}')   
 def fizzbuzz(number):
      number = int(number)
