@@ -1,12 +1,11 @@
 from chalice import Chalice
-import json
+# import json
 app = Chalice(app_name='stringconverterapi')
 
 
-@app.route('/')
+@app.route('/test/text=<enter text>')
 # def index():
 #     return {'hello': 'world'}
-# import json
 
 def process_string(text):
     ''' The  function takes as input a string and adds a copy right symbol
@@ -25,24 +24,24 @@ def process_string(text):
     return response_text
     
 
-def lambda_handler(event, context):
-    """ The lambda function will take a text as input from the user and add the 
-    copyrighted symbol after the given     keywords. 
-    Eg : Google : Google©
-         Oracle : Oracle©
-         Amazon : Amazon©
-         Deloitte: Deloitte©
-         Microsoft: Microsoft©
-    """
+# def lambda_handler(event, context):
+#     """ The lambda function will take a text as input from the user and add the 
+#     copyrighted symbol after the given     keywords. 
+#     Eg : Google : Google©
+#          Oracle : Oracle©
+#          Amazon : Amazon©
+#          Deloitte: Deloitte©
+#          Microsoft: Microsoft©
+#     """
 
-    user_input=event['queryStringParameters']["text"]                            # To get text input from the event handler
-    user_output=process_string(user_input)
+#     user_input=event['queryStringParameters']["text"]                            # To get text input from the event handler
+#     user_output=process_string(user_input)
    
-    return {
-        'statusCode': 200,
-        'headers': {"Content-Type" : 'application/json ; charset:utf-8'},
-        'body': json.dumps(user_output)
-    }
+#     return {
+#         'statusCode': 200,
+#         'headers': {"Content-Type" : 'application/json ; charset:utf-8'},
+#         'body': json.dumps(user_output)
+#     }
 
 
 # The view function above will return {"hello": "world"}
